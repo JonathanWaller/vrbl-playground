@@ -1,0 +1,22 @@
+$greenColor: green;
+$greyColor: lightgrey;
+$orangeColor: orange;
+
+// nav {
+//   a {
+//     color: red;
+//   }
+// }
+
+.test {
+  color: $greenColor;
+  border: 1px solid red;
+  background: $greyColor;
+}
+
+// .second__text {
+//   border: 1px solid purple;
+//   div {
+//     color: $orangeColor;
+//   }
+// }
