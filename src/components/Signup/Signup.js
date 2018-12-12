@@ -4,13 +4,32 @@ import "./Signup.scss";
 class Signup extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      first: "",
+      last: "",
+      role: "",
+      rate: null
+    };
   }
 
+  handleFirst = e => {
+    this.setState({ first: e.target.value });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <>
-        <div className="test">Hello from Signup</div>
+        <h1>Signup as Operator</h1>
+        <div>First Name</div>
+        <input onChange={e => this.handleFirst(e)} />
+        <div>Last Name</div>
+        <input />
+        <div>Role</div>
+        <input />
+        <div>Desired Rate</div>
+        <input />
+        <button>Submit Probile</button>
       </>
     );
   }
