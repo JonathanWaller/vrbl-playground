@@ -6,6 +6,16 @@ const getOperators = (req, res) => {
   });
 };
 
+const addOperator = (req, res) => {
+  console.log(req.body);
+  let { first } = req.body;
+  let db = req.app.get("db");
+  db.addOperator(first).then(response => {
+    console.log(response);
+  });
+};
+
 module.exports = {
-  getOperators
+  getOperators,
+  addOperator
 };

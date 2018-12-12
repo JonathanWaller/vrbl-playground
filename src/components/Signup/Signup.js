@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Signup.scss";
+import axios from "axios";
 
 class Signup extends Component {
   constructor() {
@@ -16,6 +17,10 @@ class Signup extends Component {
     this.setState({ first: e.target.value });
   };
 
+  handleSubmit = first => {
+    axios.post("/api/operator", { first });
+  };
+
   render() {
     console.log(this.state);
     return (
@@ -29,7 +34,9 @@ class Signup extends Component {
         <input />
         <div>Desired Rate</div>
         <input />
-        <button>Submit Probile</button>
+        <button onClick={() => this.handleSubmit(this.state.first)}>
+          Submit Profile
+        </button>
       </>
     );
   }

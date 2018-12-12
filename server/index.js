@@ -5,7 +5,7 @@ const express = require("express"),
   PORT = 3001;
 
 // controllers
-const { getOperators } = require("./controllers/operatorCtrl");
+const { getOperators, addOperator } = require("./controllers/operatorCtrl");
 
 const app = express();
 app.use(json());
@@ -24,5 +24,6 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 // });
 
 app.get("/api/operators", getOperators);
+app.post("/api/operator", addOperator);
 
 app.listen(PORT, () => console.log(`welcome, living at ${PORT}`));
