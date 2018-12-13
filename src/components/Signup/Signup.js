@@ -13,8 +13,12 @@ class Signup extends Component {
     };
   }
 
-  handleFirst = e => {
-    this.setState({ first: e.target.value });
+  //   handleFirst = e => {
+  //     this.setState({ first: e.target.value });
+  //   };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = first => {
@@ -27,13 +31,14 @@ class Signup extends Component {
       <>
         <h1>Signup as Operator</h1>
         <div>First Name</div>
-        <input onChange={e => this.handleFirst(e)} />
+        {/* <input onChange={e => this.handleFirst(e)} /> */}
+        <input name="first" onChange={e => this.handleChange(e)} />
         <div>Last Name</div>
-        <input />
+        <input name="last" onChange={e => this.handleChange(e)} />
         <div>Role</div>
-        <input />
+        <input name="role" onChange={e => this.handleChange(e)} />
         <div>Desired Rate</div>
-        <input />
+        <input name="rate" onChange={e => this.handleChange(e)} />
         <button onClick={() => this.handleSubmit(this.state.first)}>
           Submit Profile
         </button>
