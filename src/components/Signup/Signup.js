@@ -21,12 +21,13 @@ class Signup extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = first => {
-    axios.post("/api/operator", { first });
+  handleSubmit = (last, first, role, rate) => {
+    axios.post("/api/operator", { last, first, role, rate });
   };
 
   render() {
     console.log(this.state);
+    const { last, first, role, rate } = this.state;
     return (
       <>
         <h1>Signup as Operator</h1>
@@ -39,7 +40,7 @@ class Signup extends Component {
         <input name="role" onChange={e => this.handleChange(e)} />
         <div>Desired Rate</div>
         <input name="rate" onChange={e => this.handleChange(e)} />
-        <button onClick={() => this.handleSubmit(this.state.first)}>
+        <button onClick={() => this.handleSubmit(last, first, role, rate)}>
           Submit Profile
         </button>
       </>

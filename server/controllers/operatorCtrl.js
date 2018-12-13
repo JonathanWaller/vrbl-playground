@@ -8,9 +8,9 @@ const getOperators = (req, res) => {
 
 const addOperator = (req, res) => {
   console.log(req.body);
-  let { first } = req.body;
+  let { last, first, role, rate } = req.body;
   let db = req.app.get("db");
-  db.addOperator(first).then(response => {
+  db.addOperator([last, first, role, rate]).then(response => {
     console.log(response);
   });
 };
