@@ -11,7 +11,8 @@ const addOperator = (req, res) => {
   let { last, first, role, rate } = req.body;
   let db = req.app.get("db");
   db.addOperator([last, first, role, rate]).then(response => {
-    console.log(response);
+    // console.log(response);
+    res.status(200).json(response);
   });
 };
 

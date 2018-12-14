@@ -22,7 +22,9 @@ class Signup extends Component {
   };
 
   handleSubmit = (last, first, role, rate) => {
-    axios.post("/api/operator", { last, first, role, rate });
+    axios.post("/api/operator", { last, first, role, rate }).then(response => {
+      console.log(response);
+    });
   };
 
   render() {
