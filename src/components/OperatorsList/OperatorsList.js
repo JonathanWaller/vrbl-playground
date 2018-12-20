@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./OperatorsList.scss";
 
 class OperatorsList extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class OperatorsList extends Component {
     console.log(this.state);
     let operatorsList = this.state.operators.map((operator, id) => {
       return (
-        <div key={id}>
+        <div key={id} className="operator__card">
           <div>{operator.name_last}</div>
           <div>{operator.name_first}</div>
         </div>
