@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Signup.scss";
 import axios from "axios";
+import Button from "@material-ui/core/Button";
 
 class Signup extends Component {
   constructor() {
@@ -42,6 +43,13 @@ class Signup extends Component {
         <input name="role" onChange={e => this.handleChange(e)} />
         <div>Desired Rate</div>
         <input name="rate" onChange={e => this.handleChange(e)} />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => this.handleSubmit(last, first, role, rate)}
+        >
+          Submit Profile
+        </Button>
         <button onClick={() => this.handleSubmit(last, first, role, rate)}>
           Submit Profile
         </button>
