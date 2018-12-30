@@ -23,7 +23,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 //   res.status(200).send("Yessiiiir");
 // });
 
-app.get("/api/operators", getOperators);
+app.get("/operators", getOperators);
 app.post("/api/operator", addOperator);
 
 app.listen(PORT, () => console.log(`welcome, living at ${PORT}`));

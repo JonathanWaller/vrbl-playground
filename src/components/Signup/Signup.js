@@ -47,6 +47,7 @@ class Signup extends Component {
           variant="contained"
           color="primary"
           onClick={() => this.handleSubmit(last, first, role, rate)}
+          f
         >
           Submit Profile
         </Button>
