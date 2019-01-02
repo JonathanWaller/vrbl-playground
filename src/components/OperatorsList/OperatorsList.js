@@ -13,14 +13,16 @@ class OperatorsList extends Component {
     };
   }
   componentDidMount() {
-    axios.get("/operators").then(response => {
-      //   console.log(response);
-      this.setState({ operators: response.data });
-    });
+    // axios.get("/operators").then(response => {
+    //   //   console.log(response);
+    //   this.setState({ operators: response.data });
+    // });
+    console.log("mount as occurred");
   }
 
   componentDidUpdate() {
-    this.setState({ operatorCardClass: "operator__purple" });
+    // this.setState({ operatorCardClass: "operator__purple" });
+    console.log("update has occurred");
   }
 
   updateFirstName = e => {
